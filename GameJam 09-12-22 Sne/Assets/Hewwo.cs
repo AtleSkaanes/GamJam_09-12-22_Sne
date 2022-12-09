@@ -9,7 +9,8 @@ public class Hewwo : MonoBehaviour
     void Start()
     {
         string coolEmoticon = ":J";
-        Debug.Log(coolEmoticon);
+        string lessCoolEmoticon = ":)";
+        Debug.Log(coolEmoticon+" >>>> "+lessCoolEmoticon);
     }
 
     // Update is called once per frame
