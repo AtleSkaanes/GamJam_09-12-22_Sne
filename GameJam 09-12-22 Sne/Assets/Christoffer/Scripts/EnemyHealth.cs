@@ -30,11 +30,11 @@ public class EnemyHealth : MonoBehaviour
         health -= dmg;
         if (health <= Mathf.Epsilon)
         {
-            enemyDie();
+            EnemyDie();
         }
     }
 
-    public void enemyDie()
+    public void EnemyDie()
     {
         this.gameObject.SetActive(false);
         objectPool.inactiveRangedEnemyPool.Add(this.gameObject);

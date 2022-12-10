@@ -21,6 +21,7 @@ public class RangedEnemy : MonoBehaviour
     private float rSpeed;
     private float time = 0f;
 
+    [SerializeField]
     EnemyHealth healthScript;
 
     private void OnEnable()
@@ -60,7 +61,7 @@ public class RangedEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //do damage to player here
-            healthScript.enemyDie();
+            healthScript.EnemyDie();
         }
     }
 }

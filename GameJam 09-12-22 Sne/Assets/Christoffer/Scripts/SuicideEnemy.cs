@@ -32,7 +32,7 @@ public class SuicideEnemy : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerTrans = player.transform;
-        playerCombat = player.GetComponent<PlayerCombat>();
+        //playerCombat = player.GetComponent<PlayerCombat>();
 
         rSpeed = speed * Random.Range(0.85f, 1.15f);
 
@@ -51,8 +51,8 @@ public class SuicideEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerCombat.Damage(damage);
-            healthScript.enemyDie();
+            collision.gameObject.GetComponent<PlayerCombat>().Damage(damage);
+            healthScript.EnemyDie();
         }
     }
 }

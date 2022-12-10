@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1416647556}
   m_Layer: 0
   m_Name: World
-  m_TagString: Untagged
+  m_TagString: ObjectPool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,6 +360,10 @@ MonoBehaviour:
   numOfRangedEnemies: 500
   suicideEnemy: {fileID: 8719148621160665208, guid: ad9cecd59cfba6a4d82b9e2d327899c2, type: 3}
   rangedEnemy: {fileID: 7741991904017493058, guid: 353d53c3808bb8e41a17f17781631b2b, type: 3}
+  activeSuicideEnemyPool: []
+  inactiveSuicideEnemyPool: []
+  activeRangedEnemyPool: []
+  inactiveRangedEnemyPool: []
 --- !u!4 &1416647555
 Transform:
   m_ObjectHideFlags: 0
