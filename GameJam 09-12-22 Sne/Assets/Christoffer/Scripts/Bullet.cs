@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
 
     public float bulletSpeed = 2f;
 
+    public float damage = 5f;
+
     Vector3 direction;
 
     float time = 0f;
@@ -34,7 +36,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //do dmg to player
+            collision.gameObject.GetComponent<PlayerCombat>().Damage(damage);
             Destroy(this.gameObject);
         }
     }

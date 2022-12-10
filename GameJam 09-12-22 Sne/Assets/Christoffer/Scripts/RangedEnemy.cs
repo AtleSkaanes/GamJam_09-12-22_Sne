@@ -10,6 +10,7 @@ public class RangedEnemy : MonoBehaviour
     public bool canMove = true;
     public float speed = 1.5f;
     public float attackSpeed = 2f;
+    public float damage = 10f;
 
     Transform playerTrans;
     [SerializeField]
@@ -60,7 +61,7 @@ public class RangedEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //do damage to player here
+            //collision.gameObject.GetComponent<PlayerCombat>().Damage(damage);
             healthScript.EnemyDie();
         }
     }
