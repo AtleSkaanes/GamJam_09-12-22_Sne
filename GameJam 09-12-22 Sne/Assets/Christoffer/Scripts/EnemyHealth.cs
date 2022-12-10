@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public float maxHealth;
 
+    EnemyObjectPool objectPool;
+
     private void OnEnable ()
     {
         health = maxHealth;
@@ -14,13 +16,13 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-
+        objectPool = GameObject.FindGameObjectWithTag("ObjectPool").GetComponent<EnemyObjectPool>();
     }
 
 
     void Update()
     {
-        
+
     }
 
     public void Damage (float dmg)
@@ -28,7 +30,14 @@ public class EnemyHealth : MonoBehaviour
         health -= dmg;
         if (health <= Mathf.Epsilon)
         {
-            this.gameObject.SetActive(false);
+            enemyDie();
         }
+    }
+
+    public void enemyDie()
+    {
+        this.gameObject.SetActive(false);
+        objectPool.inactiveRangedEnemyPool.Add(this.gameObject);
+        objectPool.activeRangedEnemyPool.Remove(this.gameObject);
     }
 }
