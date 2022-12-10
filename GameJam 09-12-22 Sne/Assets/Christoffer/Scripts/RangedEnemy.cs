@@ -9,7 +9,6 @@ public class RangedEnemy : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
     public float speed = 1.5f;
-    public float healthPoints = 35f;
     public float attackSpeed = 2f;
 
     Transform playerTrans;
@@ -51,12 +50,5 @@ public class RangedEnemy : MonoBehaviour
             //do damage to player here
             Destroy(this.gameObject);
         }
-    }
-
-    public void Damage (float dmg)
-    {
-        healthPoints =- dmg;
-        if (healthPoints <= 0)
-            Destroy(this.gameObject);
     }
 }

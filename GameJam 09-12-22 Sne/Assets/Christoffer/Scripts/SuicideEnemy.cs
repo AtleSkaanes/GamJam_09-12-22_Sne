@@ -9,9 +9,12 @@ public class SuicideEnemy : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
     public float speed = 2f;
-    public float healthPoints = 50f;
+    public float damage = 20f;
 
+    GameObject player;
     Transform playerTrans;
+    PlayerCombat playerCombat;
+
     public Rigidbody2D rb2D;
 
     Vector2 direction;
@@ -20,7 +23,10 @@ public class SuicideEnemy : MonoBehaviour
 
     void Start()
     {
-        playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTrans = player.transform;
+        playerCombat = player.GetComponent<PlayerCombat>();
+
         rSpeed = speed * Random.Range(0.85f, 1.15f);
     }
 
@@ -35,15 +41,8 @@ public class SuicideEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //do damage to player here
+            playerCombat.Damage(damage);
             Destroy(this.gameObject);
         }
-    }
-
-    public void Damage (float dmg)
-    {
-        healthPoints =- dmg;
-        if (healthPoints <= 0)
-            Destroy(this.gameObject);
     }
 }
