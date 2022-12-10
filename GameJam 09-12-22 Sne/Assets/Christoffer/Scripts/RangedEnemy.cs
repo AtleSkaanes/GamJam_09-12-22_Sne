@@ -12,7 +12,6 @@ public class RangedEnemy : MonoBehaviour
     public float healthPoints = 35f;
     public float attackSpeed = 2f;
 
-    [SerializeField]
     Transform playerTrans;
     [SerializeField]
     GameObject bullet;
@@ -25,6 +24,7 @@ public class RangedEnemy : MonoBehaviour
 
     void Start()
     {
+        playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         rSpeed = speed * Random.Range(0.95f, 1.05f);
     }
 
