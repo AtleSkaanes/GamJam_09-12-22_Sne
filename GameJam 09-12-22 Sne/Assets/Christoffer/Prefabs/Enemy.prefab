@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8774210332354754097}
   - component: {fileID: 8774210332354754096}
   - component: {fileID: 8774210332354754099}
+  - component: {fileID: -9078988482813585283}
   - component: {fileID: 8774210332354754095}
   - component: {fileID: 8774210332354754092}
   m_Layer: 0
@@ -50,8 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   speed: 1.5
-  healthPoints: 35
-  playerTrans: {fileID: 1698385718764179823, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+  attackSpeed: 2
   bullet: {fileID: 7837591901887434021, guid: 4f29a9ec605a74d498dad5563a128b22, type: 3}
   rb2D: {fileID: 8774210332354754095}
 --- !u!114 &8774210332354754099
@@ -68,9 +68,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   speed: 2
-  healthPoints: 50
-  playerTrans: {fileID: 1698385718764179823, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+  damage: 20
   rb2D: {fileID: 8774210332354754095}
+--- !u!114 &-9078988482813585283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774210332354754093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a59d2a5e7ad684b94cda59df084b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &8774210332354754095
 Rigidbody2D:
   serializedVersion: 4
