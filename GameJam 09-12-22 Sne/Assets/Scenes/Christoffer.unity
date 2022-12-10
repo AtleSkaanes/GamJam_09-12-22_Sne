@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &172436182 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1698385718764179823, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
-  m_PrefabInstance: {fileID: 1698385718869375929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1698385718869375929
 PrefabInstance:
@@ -287,7 +282,7 @@ PrefabInstance:
     - target: {fileID: 8774210332354754096, guid: 8d3b7db8111b7884a96a96b00f55a230, type: 3}
       propertyPath: playerTrans
       value: 
-      objectReference: {fileID: 172436182}
+      objectReference: {fileID: 0}
     - target: {fileID: 8774210332354754097, guid: 8d3b7db8111b7884a96a96b00f55a230, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -339,6 +334,6 @@ PrefabInstance:
     - target: {fileID: 8774210332354754099, guid: 8d3b7db8111b7884a96a96b00f55a230, type: 3}
       propertyPath: playerTrans
       value: 
-      objectReference: {fileID: 172436182}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d3b7db8111b7884a96a96b00f55a230, type: 3}

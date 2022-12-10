@@ -11,7 +11,6 @@ public class SuicideEnemy : MonoBehaviour
     public float speed = 2f;
     public float healthPoints = 50f;
 
-    [SerializeField]
     Transform playerTrans;
     public Rigidbody2D rb2D;
 
@@ -21,6 +20,7 @@ public class SuicideEnemy : MonoBehaviour
 
     void Start()
     {
+        playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
         rSpeed = speed * Random.Range(0.85f, 1.15f);
     }
 
