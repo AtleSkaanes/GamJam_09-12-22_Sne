@@ -10,9 +10,7 @@ public class Shovel : MonoBehaviour
     public float velocity;
     float prevRotation;
     float currentRotation;
-    float damage;
-
-    [SerializeField] float rot;
+    float damage = 10f;
 
 
     Rigidbody2D rb;
@@ -24,12 +22,12 @@ public class Shovel : MonoBehaviour
     void Update()
     {
         CalculateRotation();
-        CalculateVelocity();
+        //CalculateVelocity();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log(damage);
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Debug.Log(damage);
+        //}
     }
 
     void CalculateRotation()
@@ -41,18 +39,18 @@ public class Shovel : MonoBehaviour
 
         float angle = Mathf.Atan2(diffrence.y, diffrence.x) * Mathf.Rad2Deg - 90;
 
-        //transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
 
 
-        float deltaAngle = rb.rotation - angle;
+        //float deltaAngle = rb.rotation - angle;
 
-        deltaAngle = (deltaAngle - 360 * Mathf.Floor(deltaAngle / 360)) * deltaAngle / Mathf.Abs(deltaAngle);
+        //deltaAngle = (deltaAngle - 360 * Mathf.Floor(deltaAngle / 360)) * deltaAngle / Mathf.Abs(deltaAngle);
 
-        deltaAngle = Mathf.Abs(deltaAngle) % 360 - 180;
+        //deltaAngle = Mathf.Abs(deltaAngle) % 360 - 180;
 
         
 
-        rb.AddTorque(deltaAngle / 2 * Time.deltaTime);
+        //rb.AddTorque(deltaAngle / 2 * Time.deltaTime);
     }
 
     void CalculateVelocity()
@@ -66,15 +64,18 @@ public class Shovel : MonoBehaviour
             damage = 5 + velocity * 2;
         }
         else { damage = 0; }
-
-        rot = rb.rotation;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyHealth>().Damage(damage);
+            if (Input.GetMouseButtonDown(0))
+            {
+                collision.gameObject.GetComponent<EnemyHealth>().Damage(damage);
+            }
+            Debug.Log(collision.gameObject.GetComponent<EnemyHealth>().health);
+
         }
     }
 }
