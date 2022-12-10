@@ -18,6 +18,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+
+            ToAlpha();
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+
+            fromAlpha();
+
+        }
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 relMousePos = new(mousePos.x-transform.position.x,mousePos.y-transform.position.y);
         float hypotenuse = Mathf.Sqrt(Mathf.Pow(relMousePos.x, 2)+Mathf.Pow(relMousePos.y, 2));
@@ -83,5 +97,39 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddForce(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))*speed);
+    }
+
+    void ToAlpha()
+    {
+
+        float alpha = transform.GetComponent<Renderer>().material.color.a;
+
+        while (alpha > 0)
+        {
+
+            alpha -= Time.deltaTime;
+            print(alpha);
+            Color newColor = new Color(1, 1, 1, alpha);
+            transform.GetComponent<Renderer>().material.color = newColor;
+
+        }
+
+    }
+
+    void fromAlpha()
+    {
+
+        float alpha = transform.GetComponent<Renderer>().material.color.a;
+
+        while (alpha < 1)
+        {
+
+            alpha += Time.deltaTime;
+            print(alpha);
+            Color newColor = new Color(1, 1, 1, alpha);
+            transform.GetComponent<Renderer>().material.color = newColor;
+
+        }
+
     }
 }

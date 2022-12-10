@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 563402099768992635}
-  - component: {fileID: 563402099768992634}
   - component: {fileID: 563402099768992633}
   - component: {fileID: 8941104198056480055}
   - component: {fileID: 563402099768992613}
@@ -30,31 +29,13 @@ Transform:
   m_GameObject: {fileID: 563402099768992615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.02, y: 3.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 563402101234749029}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &563402099768992634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563402099768992615}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a29d86cf5f4488e4580d8eef90048923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canMove: 1
-  speed: 1.5
-  attackSpeed: 2
-  bullet: {fileID: 7837591901887434021, guid: 4f29a9ec605a74d498dad5563a128b22, type: 3}
-  rb2D: {fileID: 563402099768992613}
-  healthScript: {fileID: 8941104198056480055}
 --- !u!114 &563402099768992633
 MonoBehaviour:
   m_ObjectHideFlags: 0
