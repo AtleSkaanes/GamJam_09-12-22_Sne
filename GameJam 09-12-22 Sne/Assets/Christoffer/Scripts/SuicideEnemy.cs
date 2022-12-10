@@ -9,7 +9,7 @@ public class SuicideEnemy : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
     public float speed = 2f;
-    public float damage = 20f;
+    public float damage = 10f;
 
     GameObject player;
     Transform playerTrans;
