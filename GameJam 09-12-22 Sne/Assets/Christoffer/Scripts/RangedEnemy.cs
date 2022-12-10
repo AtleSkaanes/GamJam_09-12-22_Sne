@@ -10,13 +10,18 @@ public class RangedEnemy : MonoBehaviour
     public bool canMove = true;
     public float speed = 1.5f;
     public float healthPoints = 35f;
+    public float attackSpeed = 2f;
 
-    public Transform playerTrans;
+    [SerializeField]
+    Transform playerTrans;
+    [SerializeField]
+    GameObject bullet;
     public Rigidbody2D rb2D;
 
     Vector2 direction;
 
     private float rSpeed;
+    private float time = 0f;
 
     void Start()
     {
@@ -28,25 +33,30 @@ public class RangedEnemy : MonoBehaviour
     {
         direction = (playerTrans.position - this.transform.position).normalized;
         if (Mathf.Abs(playerTrans.position.x - this.transform.position.x) > 4f || Mathf.Abs(playerTrans.position.y - this.transform.position.y) > 4f)
-        {
             rb2D.AddForce(direction * rSpeed);
+        
+        time += Time.deltaTime;
+
+        if (time > attackSpeed)
+        {
+            Instantiate(bullet, this.transform.position, new Quaternion());
+            time = 0;
         }
     }
 
-    private void OnTriggerEnter2D (Collider2D collision)
+    private void OnCollisionEnter2D (Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            //do damage to player here
             Destroy(this.gameObject);
         }
     }
 
-    void Damage (float dmg)
+    public void Damage (float dmg)
     {
         healthPoints =- dmg;
         if (healthPoints <= 0)
-        {
             Destroy(this.gameObject);
-        }
     }
 }

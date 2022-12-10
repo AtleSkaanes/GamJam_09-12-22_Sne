@@ -11,7 +11,8 @@ public class SuicideEnemy : MonoBehaviour
     public float speed = 2f;
     public float healthPoints = 50f;
 
-    public Transform playerTrans;
+    [SerializeField]
+    Transform playerTrans;
     public Rigidbody2D rb2D;
 
     Vector2 direction;
@@ -30,13 +31,16 @@ public class SuicideEnemy : MonoBehaviour
         rb2D.AddForce(direction * rSpeed);
     }
 
-    private void OnTriggerEnter2D (Collider2D collision)
+    private void OnCollisionEnter2D (Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
+        {
+            //do damage to player here
             Destroy(this.gameObject);
+        }
     }
 
-    void Damage (float dmg)
+    public void Damage (float dmg)
     {
         healthPoints =- dmg;
         if (healthPoints <= 0)
