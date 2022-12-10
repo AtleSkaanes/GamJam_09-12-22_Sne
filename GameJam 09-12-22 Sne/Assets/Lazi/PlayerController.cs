@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
         Vector2 relMousePos = new(mousePos.x-transform.position.x,mousePos.y-transform.position.y);
         float hypotenuse = Mathf.Sqrt(Mathf.Pow(relMousePos.x, 2)+Mathf.Pow(relMousePos.y, 2));
         float relMouseRad = Mathf.Asin(relMousePos.y/hypotenuse);
-        Debug.Log(mousePos);
         float relMouseDeg = relMouseRad*Mathf.Rad2Deg;
 
         if (mousePos.x <0 && mousePos.y <0)
@@ -35,8 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             relMouseDeg = 360-(relMouseDeg*-1);
         }
-
-        Debug.Log(relMouseDeg);
 
         if (relMouseDeg >=0 && relMouseDeg <45)
         {
