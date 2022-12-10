@@ -7,9 +7,14 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public float maxHealth;
 
-    void Start()
+    private void OnEnable ()
     {
         health = maxHealth;
+    }
+
+    void Start()
+    {
+
     }
 
 
