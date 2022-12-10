@@ -63,6 +63,7 @@ public class EnemyObjectPool : MonoBehaviour
             inactiveSuicideEnemyPool[i].SetActive(true);
             activeSuicideEnemyPool.Add(inactiveSuicideEnemyPool[i]);
             inactiveSuicideEnemyPool.RemoveAt(i);
+            Debug.Log("Enabled" + i);
         }
 
         for (int i = 0; i < numOfRanged; i++)

@@ -21,6 +21,13 @@ public class SuicideEnemy : MonoBehaviour
 
     private float rSpeed;
 
+    EnemyHealth healthScript;
+
+    private void OnEnable()
+    {
+        transform.position = new Vector2(Random.Range(-10, 10),-6);
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -28,6 +35,9 @@ public class SuicideEnemy : MonoBehaviour
         playerCombat = player.GetComponent<PlayerCombat>();
 
         rSpeed = speed * Random.Range(0.85f, 1.15f);
+
+        healthScript = GetComponent<EnemyHealth>();
+
     }
 
     // Update is called once per frame
@@ -42,7 +52,7 @@ public class SuicideEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             playerCombat.Damage(damage);
-            Destroy(this.gameObject);
+            healthScript.enemyDie();
         }
     }
 }
