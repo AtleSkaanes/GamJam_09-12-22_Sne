@@ -11,11 +11,11 @@ public class EnemyObjectPool : MonoBehaviour
     public GameObject suicideEnemy;
     public GameObject rangedEnemy;
 
-    List<GameObject> activeSuicideEnemyPool;
-    List<GameObject> inactiveSuicideEnemyPool;
+    public List<GameObject> activeSuicideEnemyPool;
+    public List<GameObject> inactiveSuicideEnemyPool;
 
-    List<GameObject> activeRangedEnemyPool;
-    List<GameObject> inactiveRangedEnemyPool;
+    public List<GameObject> activeRangedEnemyPool;
+    public List<GameObject> inactiveRangedEnemyPool;
 
 
     void Start()
