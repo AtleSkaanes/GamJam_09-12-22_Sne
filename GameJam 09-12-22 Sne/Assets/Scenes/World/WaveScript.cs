@@ -48,8 +48,8 @@ public class WaveScript : MonoBehaviour
     {
         waitForStart = false;
         wave++;
-        int rngEnmy = Mathf.RoundToInt(Mathf.Pow(wave, 2) / 3);
-        int scdEnmy = Mathf.RoundToInt((Mathf.Pow(wave, 2) / 3) * 2);
+        int rngEnmy = Mathf.RoundToInt(Mathf.Pow(wave, 1.4f) / 3);
+        int scdEnmy = Mathf.RoundToInt((Mathf.Pow(wave, 1.4f) / 3) * 2);
         objPool.EnableEnemies(scdEnmy,rngEnmy);
     }
 
