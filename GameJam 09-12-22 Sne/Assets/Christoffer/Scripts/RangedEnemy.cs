@@ -33,7 +33,10 @@ public class RangedEnemy : MonoBehaviour
         direction = (playerTrans.position - this.transform.position).normalized;
         if (Mathf.Abs(playerTrans.position.x - this.transform.position.x) > 4f || Mathf.Abs(playerTrans.position.y - this.transform.position.y) > 4f)
             rb2D.AddForce(direction * rSpeed);
-        
+
+        else if (Mathf.Abs(playerTrans.position.x - this.transform.position.x) < 2.5f && Mathf.Abs(playerTrans.position.y - this.transform.position.y) < 2.5f)
+            rb2D.AddForce(-direction * rSpeed/1.5f);
+
         time += Time.deltaTime;
 
         if (time > attackSpeed)
