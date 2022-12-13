@@ -51,8 +51,8 @@ public class SuicideEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerCombat>().Damage(damage);
-            healthScript.EnemyDie();
+            //collision.gameObject.GetComponent<PlayerCombat>().Damage(damage);
+            //healthScript.EnemyDie();
         }
     }
 }
