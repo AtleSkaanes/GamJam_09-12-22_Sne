@@ -769,6 +769,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 1631250840, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1698385718764179820, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
       propertyPath: m_Name
       value: Player

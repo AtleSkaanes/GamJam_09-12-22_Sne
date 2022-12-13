@@ -172,8 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numOfSucicideEnemies: 500
   numOfRangedEnemies: 500
-  suicideEnemy: {fileID: 8719148621160665208, guid: ad9cecd59cfba6a4d82b9e2d327899c2, type: 3}
-  rangedEnemy: {fileID: 7741991904017493058, guid: 353d53c3808bb8e41a17f17781631b2b, type: 3}
+  suicideEnemy: {fileID: 563402099768992615, guid: 7db9a5c8759a3d446ad630f0606f4bb6, type: 3}
+  rangedEnemy: {fileID: 2565281889011547328, guid: 3d14476f30466944ea11eb21a6d1983f, type: 3}
   activeSuicideEnemyPool: []
   inactiveSuicideEnemyPool: []
   activeRangedEnemyPool: []
@@ -590,9 +590,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 792833301, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 1631250840, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Offset.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631250843, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 2451220969043455250, guid: 4cf870f0e2c7c434b91c7696d67bfb76, type: 3}
       propertyPath: m_Name

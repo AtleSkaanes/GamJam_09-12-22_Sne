@@ -8,26 +8,30 @@ public class Shovel : MonoBehaviour
     public float torque;
 
     public float velocity;
-    float prevRotation;
-    float currentRotation;
-    float damage = 10f;
+    [SerializeField] float prevRotation;
+    [SerializeField] float currentRotation;
+    [SerializeField] float damage = 10f;
 
 
     Rigidbody2D rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         CalculateRotation();
-        //CalculateVelocity();
 
         //if (Input.GetMouseButtonDown(0))
         //{
         //    Debug.Log(damage);
         //}
+    }
+
+    private void FixedUpdate()
+    {
+        CalculateVelocity();
     }
 
     void CalculateRotation()
@@ -55,25 +59,23 @@ public class Shovel : MonoBehaviour
 
     void CalculateVelocity()
     {
-        currentRotation = rb.rotation;
+        currentRotation = transform.rotation.z;
         velocity = Mathf.Abs(currentRotation - prevRotation);
-        prevRotation = rb.rotation;
+        prevRotation = transform.rotation.z;
 
-        if (velocity >= 2)
+        if (velocity >= 0.05)
         {
             damage = 5 + velocity * 2;
         }
         else { damage = 0; }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                collision.gameObject.GetComponent<EnemyHealth>().Damage(damage);
-            }
+            collision.gameObject.GetComponent<EnemyHealth>().Damage(damage);
             Debug.Log(collision.gameObject.GetComponent<EnemyHealth>().health);
 
         }
