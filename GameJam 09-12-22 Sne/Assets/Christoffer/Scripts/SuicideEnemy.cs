@@ -53,6 +53,7 @@ public class SuicideEnemy : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerCombat>().Damage(damage);
             healthScript.EnemyDie();
+            Debug.Log(collision.gameObject.name);
         }
     }
 }

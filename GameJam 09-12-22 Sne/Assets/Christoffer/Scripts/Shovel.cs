@@ -70,13 +70,12 @@ public class Shovel : MonoBehaviour
         else { damage = 0; }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().Damage(damage);
-            Debug.Log(collision.gameObject.GetComponent<EnemyHealth>().health);
+            //Debug.Log(collision.gameObject.GetComponent<EnemyHealth>().health);
 
         }
     }
