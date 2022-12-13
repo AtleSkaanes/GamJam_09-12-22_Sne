@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerCombat : MonoBehaviour
@@ -30,6 +31,7 @@ public class PlayerCombat : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             isAlive = false;
+            SceneManager.LoadScene("Gameover");
         }
     }
 }
